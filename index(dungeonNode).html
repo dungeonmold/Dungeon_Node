@@ -16,21 +16,23 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">Dungeon Node</a>
-                <button class="mobile-menu-btn">☰</button>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#packages">Packages</a></li>
-                    <li><a href="#contact">Order</a></li>
-                </ul>
-            </nav>
-
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo" style="display: flex; align-items: center; gap: 20px;">
+                <img src="DungeonLogo.png" alt="Dungeon Node" style="height: 70px; width: auto;">
+                <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-light);">Dungeon Node</span>
+            </a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#contact">Order</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 
 
@@ -718,7 +720,30 @@ button:hover {
 
 
 
+/* Add to your existing CSS */
+.logo img {
+    display: block;
+    height: 40px;
+    width: auto;
+    transition: all 0.3s ease;
+}
 
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo img {
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 30px;
+    }
+}
 
 
 /* ===== RESET & BASE STYLES ===== */
@@ -841,7 +866,7 @@ section:nth-child(even) {
 
 /* ===== HEADER & NAVIGATION ===== */
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     background: rgba(15, 23, 42, 0.95);
@@ -1688,9 +1713,14 @@ html {
 
 body {
     background: 
-        linear-gradient(rgba(8, 11, 20, 0.7), rgba(8, 11, 20, 0.85)),
-        url('DungeonGraphic.png') center/cover no-repeat fixed;
+        linear-gradient(rgba(8, 11, 20, 0.85), rgba(8, 11, 20, 0.92)),
+        url('DungeonGraphic.png') center 50% / cover no-repeat fixed;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
 }
+
+
 
 .feature-card,
 .package-card,
