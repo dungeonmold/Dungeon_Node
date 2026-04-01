@@ -14,7 +14,10 @@
 
 
 </head>
+
+
 <body>
+
     <!-- Header -->
 <header>
     <div class="container">
@@ -34,7 +37,6 @@
         </nav>
     </div>
 </header>
-
 
 
     <!-- Hero Section -->
@@ -758,15 +760,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.reset();
         });
         
-        // Sticky header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-        });
+
     </script>
 
 
@@ -808,7 +802,10 @@ document.addEventListener('DOMContentLoaded', function() {
     --glow: rgba(95, 155, 135, 0.15);
     --glow-alt: rgba(58, 47, 82, 0.2);
     --shadow: rgba(0, 0, 0, 0.9);
+    --border-dark: #1f2937; 
+
 }
+
 
 /* HARD-CODED FALLBACKS FOR PRIVACY BROWSERS */
 * {
@@ -1012,9 +1009,16 @@ header {
     background: rgba(8, 11, 20, 0.95) !important;
     background: rgba(var(--bg-primary), 0.95) !important;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid #1f2937;
     border-bottom: 1px solid var(--border-dark);
     z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+/* This adds shadow when scrolling past the header */
+header.sticky-shadow {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 nav {
@@ -1577,7 +1581,7 @@ section > * {
     
     .nav-links {
         display: none;
-        position: fixed;
+        position: sticky;
         top: 70px;
         left: 0;
         right: 0;
@@ -1811,7 +1815,8 @@ a:focus {
     outline-offset: 2px;
     border-radius: 4px;
 }
-</style>
+
+
 </style>
 </body>
 </html>
