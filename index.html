@@ -1776,6 +1776,41 @@ section > * {
     background: #5f9b87;
     background: var(--primary-light);
 }
+
+
+/* =========================================
+   GLOBAL LINK STYLES - FIX UGLY BLUE LINKS
+   ========================================= */
+
+/* Base styles for ALL links */
+a {
+    color: #5f9b87;
+    color: var(--primary-light);
+    text-decoration: none;
+    border-bottom: 1px solid #5f9b87;
+    border-bottom: 1px solid var(--primary-light);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #9a6a2f;
+    color: var(--accent);
+    border-bottom-color: #9a6a2f;
+    border-bottom-color: var(--accent);
+}
+/* Visited links */
+a:visited {
+    color: #3f6b5b;  /* Your primary color */
+    color: var(--primary);
+}
+
+/* Focus state for accessibility */
+a:focus {
+    outline: 2px solid #9a6a2f;
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
 </style>
 </style>
 </body>
